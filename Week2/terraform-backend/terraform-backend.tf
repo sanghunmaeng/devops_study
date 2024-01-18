@@ -1,11 +1,11 @@
 resource "aws_s3_bucket" "test-s3-tf-state" {
 
   // 버킷 이름
-  bucket = "comento-s3-bucket-testuser"
+  bucket = "comento-s3-bucket-testuser-msh"
 
   // 태그명
   tags = {
-    "Name" = "comento-s3-bucket-testuser"
+    "Name" = "comento-s3-bucket-testuser-msh"
   }
   
 }
@@ -16,7 +16,7 @@ resource "aws_dynamodb_table" "test-ddb-tflock-state" {
   depends_on = [aws_s3_bucket.test-s3-tf-state]
 
   // 테이블 이름
-  name = "comento-ddb-table-testuser"
+  name = "comento-ddb-table-testuser-msh"
 
   // 파티션 키
   attribute {
@@ -35,7 +35,7 @@ resource "aws_dynamodb_table" "test-ddb-tflock-state" {
 
   // 태그
   tags = {
-    "Name" = "comento-ddb-table-testuser"
+    "Name" = "comento-ddb-table-testuser-msh"
   }
 
 }
