@@ -22,8 +22,8 @@ variable "aws_azs"  {
     type = list(string)
 }
 
-#// EKS 클러스터명
-#variable "cluster-name" {
-#  default = "test-eks-cluster"
-#  type    = string
-#}
+// EKS 클러스터명
+variable "cluster-name" {
+  default = "test-eks-cluster"
+  type    = string
+}
