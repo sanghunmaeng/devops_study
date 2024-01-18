@@ -1,36 +1,36 @@
-############# bastion ec2 instance iam role ############
-#
-#// - EC2 인스턴스가 사용자를 대신하여 AWS 서비스를 호출하도록 허용
-#resource "aws_iam_role" "test-iam-role-ec2-instance-bastion" {
-#
-#  // 신뢰할 수 있는 엔터티 - 지정된 조건에서 이 역할을 수임할 수 있는 엔터티
-#  assume_role_policy = <<POLICY
-#{
-#  "Statement": [
-#    {
-#      "Action": "sts:AssumeRole",
-#      "Effect": "Allow",
-#      "Principal": {
-#        "Service": "ec2.amazonaws.com"
-#      }
-#    }
-#  ],
-#  "Version": "2012-10-17"
-#}
-#POLICY
-#  name                 = "test-iam-role-ec2-instance-bastion"
-#  description          = "Iam role for bastion ec2 instance."
-#  max_session_duration = "3600"
-#  path                 = "/"
-#
-#  tags = {
-#    Name        = "test-iam-role-ec2-instance-bastion"
-#  }
-#
-#  tags_all = {
-#    Name        = "test-iam-role-ec2-instance-bastion"
-#  }
-#}
+############ bastion ec2 instance iam role ############
+
+// - EC2 인스턴스가 사용자를 대신하여 AWS 서비스를 호출하도록 허용
+resource "aws_iam_role" "test-iam-role-ec2-instance-bastion" {
+
+  // 신뢰할 수 있는 엔터티 - 지정된 조건에서 이 역할을 수임할 수 있는 엔터티
+  assume_role_policy = <<POLICY
+{
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      }
+    }
+  ],
+  "Version": "2012-10-17"
+}
+POLICY
+  name                 = "test-iam-role-ec2-instance-bastion"
+  description          = "Iam role for bastion ec2 instance."
+  max_session_duration = "3600"
+  path                 = "/"
+
+  tags = {
+    Name        = "test-iam-role-ec2-instance-bastion"
+  }
+
+  tags_all = {
+    Name        = "test-iam-role-ec2-instance-bastion"
+  }
+}
 #
 ############ eks cluster and nodegroup iam role ############
 #
