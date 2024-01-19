@@ -32,13 +32,13 @@ resource "aws_eks_node_group" "test-eks-nodegroup" {
   scaling_config {
 
     // 원하는 크기
-    desired_size = 2
+    desired_size = 4
 
     // 최소 크기
     min_size = 1
 
     // 최대 크기
-    max_size = 3
+    max_size = 4
 
   }
 
